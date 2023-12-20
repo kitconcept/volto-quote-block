@@ -3,13 +3,13 @@ import { BlockDataForm } from "@plone/volto/components";
 import { QuoteBlockSchema } from "./schema";
 
 const QuoteBlockData = (props) => {
-  const { data, block, onChangeBlock } = props;
+  const { data, block, onChangeBlock, contentType, navRoot } = props;
   const schema = QuoteBlockSchema(props);
 
   return (
     <BlockDataForm
       schema={schema}
-      title={data.title}
+      title={schema.title}
       onChangeField={(id, value) => {
         onChangeBlock(block, {
           ...data,
@@ -18,6 +18,8 @@ const QuoteBlockData = (props) => {
       }}
       formData={data}
       block={block}
+      navRoot={navRoot}
+      contentType={contentType}
     />
   );
 };

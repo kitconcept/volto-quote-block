@@ -1,5 +1,6 @@
 import React from "react";
 import cx from "classnames";
+import { TextBlockView } from "@plone/volto-slate/blocks/Text";
 
 const View = (props) => {
   const { data } = props;
@@ -21,7 +22,9 @@ const View = (props) => {
           </div>
         )}
         <figure className="quotation">
-          <blockquote className="quote-text">{data.text}“</blockquote>
+          <blockquote className="quote-text">
+            <TextBlockView {...props} />
+          </blockquote>
           <figcaption className="author">
             <span className="person">{data.person}</span>
             {data.position && ", "}
