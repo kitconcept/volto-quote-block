@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: components/schema
+# defaultMessage: Image
+msgid "Image"
+msgstr ""
+
+#: components/schema
+# defaultMessage: Name
+msgid "Name"
+msgstr ""
+
+#: components/schema
+# defaultMessage: Position
+msgid "Position"
+msgstr ""
+
+#: components/schema
+# defaultMessage: Quote
+msgid "Quote"
+msgstr ""
