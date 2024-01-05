@@ -1,10 +1,9 @@
-import QuoteBlockView from "./components/View";
+import "./theme/main.less";
+
 import QuoteBlockEdit from "./components/Edit";
 import { QuoteBlockSchema } from "./components/schema";
-
+import QuoteBlockView from "./components/View";
 import quoteSVG from "@plone/volto/icons/quote.svg";
-
-import "./theme/main.less";
 
 const applyConfig = (config) => {
   config.blocks.blocksConfig.quote = {
@@ -20,6 +19,7 @@ const applyConfig = (config) => {
     restricted: false,
     mostUsed: true,
     sidebarTab: 1,
+    isImageAllowed: true,
   };
 
   return config;
