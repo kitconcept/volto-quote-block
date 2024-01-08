@@ -2,7 +2,7 @@ import config from "@plone/volto/registry";
 import { defineMessages } from "react-intl";
 
 const messages = defineMessages({
-  quoteBlock: {
+  quote: {
     id: "Quote",
     defaultMessage: "Quote",
   },
@@ -14,43 +14,57 @@ const messages = defineMessages({
     id: "Name",
     defaultMessage: "Name",
   },
-  position: {
-    id: "Position",
-    defaultMessage: "Position",
+  additionalData: {
+    id: "Additional data",
+    defaultMessage: "Additional data",
+  },
+  alignment: {
+    id: "Alignment",
+    defineMessage: "Alignment",
   },
 });
 
-export const QuoteBlockSchema = (props) => {
+export const QuoteBlockSchema = ({ intl }) => {
   return {
-    title: props.intl.formatMessage(messages.quoteBlock),
+    title: intl.formatMessage(messages.quote),
     block: "quote",
     fieldsets: [
       {
         id: "default",
         title: "Default",
-        fields: config.blocks?.blocksConfig?.quote.isImageAllowed
-          ? ["image"]
-          : [],
+        fields: config?.blocks?.blocksConfig?.quote.showImageField
+          ? ["quote", "image", "alignment"]
+          : ["quote"],
       },
       {
         id: "person",
         title: "Person",
-        fields: ["person", "position"],
+        fields: ["person", "additionalData"],
       },
     ],
     properties: {
+      quote: {
+        title: intl.formatMessage(messages.quote),
+        widget: "textarea",
+      },
       image: {
-        title: props.intl.formatMessage(messages.image),
+        title: intl.formatMessage(messages.image),
         widget: "object_browser",
         mode: "image",
         allowExternals: true,
         selectedItemAttrs: ["image_field", "image_scales"],
       },
       person: {
-        title: props.intl.formatMessage(messages.name),
+        title: intl.formatMessage(messages.name),
       },
-      position: {
-        title: props.intl.formatMessage(messages.position),
+      additionalData: {
+        title: intl.formatMessage(messages.additionalData),
+      },
+      alignment: {
+        title: intl.formatMessage(messages.alignment),
+        widget: "align",
+        actions: ["left", "center", "right"],
+        default: "center",
       },
     },
     required: [],
