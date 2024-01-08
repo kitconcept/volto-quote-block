@@ -39,7 +39,7 @@ export const QuoteBlockSchema = ({ intl }) => {
       {
         id: 'person',
         title: 'Person',
-        fields: ['person', 'additionalData'],
+        fields: ['name', 'additionalData'],
       },
     ],
     properties: {
@@ -54,7 +54,7 @@ export const QuoteBlockSchema = ({ intl }) => {
         allowExternals: true,
         selectedItemAttrs: ['image_field', 'image_scales'],
       },
-      person: {
+      name: {
         title: intl.formatMessage(messages.name),
       },
       additionalData: {

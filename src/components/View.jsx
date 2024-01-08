@@ -25,8 +25,8 @@ const View = (props) => {
           )}
         <figure className="quotation">
           <blockquote className="quote-text">{data.quote}</blockquote>
-          <figcaption className="author">
-            <span className="person">{data.person}</span>
+          <figcaption className="person">
+            <span className="name">{data.name}</span>
             {data.additionalData && `, ${data.additionalData}`}
           </figcaption>
         </figure>
