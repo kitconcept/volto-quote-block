@@ -1,7 +1,7 @@
-import React from "react";
-import config from "@plone/volto/registry";
-import { flattenToAppURL } from "@plone/volto/helpers";
-import cx from "classnames";
+import React from 'react';
+import config from '@plone/volto/registry';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import cx from 'classnames';
 
 const View = (props) => {
   const { data } = props;
@@ -11,9 +11,9 @@ const View = (props) => {
       <div className="inner-wrapper">
         {config?.blocks?.blocksConfig?.quote.showImageField &&
           data?.image?.[0] && (
-            <div className={cx("image-wrapper", `align-${data.alignment}`)}>
+            <div className={cx('image-wrapper', `align-${data.alignment}`)}>
               <img
-                src={`${flattenToAppURL(data?.image[0]["@id"])}/${
+                src={`${flattenToAppURL(data?.image[0]['@id'])}/${
                   data?.image[0]?.image_scales?.image[0]?.scales?.preview
                     ?.download
                 }}`}

@@ -1,7 +1,7 @@
-import QuoteBlockSidebar from "./Data";
-import React from "react";
-import { SidebarPortal } from "@plone/volto/components";
-import View from "./View";
+import QuoteBlockSidebar from './Data';
+import React from 'react';
+import { SidebarPortal } from '@plone/volto/components';
+import View from './View';
 
 const Edit = (props) => {
   const { data, block, onChangeBlock, selected } = props;

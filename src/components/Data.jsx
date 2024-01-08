@@ -1,6 +1,6 @@
-import { BlockDataForm } from "@plone/volto/components";
-import { QuoteBlockSchema } from "./schema";
-import React from "react";
+import { BlockDataForm } from '@plone/volto/components';
+import { QuoteBlockSchema } from './schema';
+import React from 'react';
 
 const QuoteBlockData = (props) => {
   const { data, block, onChangeBlock, contentType, navRoot } = props;

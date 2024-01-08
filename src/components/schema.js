@@ -1,58 +1,58 @@
-import config from "@plone/volto/registry";
-import { defineMessages } from "react-intl";
+import config from '@plone/volto/registry';
+import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   quote: {
-    id: "Quote",
-    defaultMessage: "Quote",
+    id: 'Quote',
+    defaultMessage: 'Quote',
   },
   image: {
-    id: "Image",
-    defaultMessage: "Image",
+    id: 'Image',
+    defaultMessage: 'Image',
   },
   name: {
-    id: "Name",
-    defaultMessage: "Name",
+    id: 'Name',
+    defaultMessage: 'Name',
   },
   additionalData: {
-    id: "Additional data",
-    defaultMessage: "Additional data",
+    id: 'Additional data',
+    defaultMessage: 'Additional data',
   },
   alignment: {
-    id: "Alignment",
-    defineMessage: "Alignment",
+    id: 'Alignment',
+    defineMessage: 'Alignment',
   },
 });
 
 export const QuoteBlockSchema = ({ intl }) => {
   return {
     title: intl.formatMessage(messages.quote),
-    block: "quote",
+    block: 'quote',
     fieldsets: [
       {
-        id: "default",
-        title: "Default",
+        id: 'default',
+        title: 'Default',
         fields: config?.blocks?.blocksConfig?.quote.showImageField
-          ? ["quote", "image", "alignment"]
-          : ["quote"],
+          ? ['quote', 'image', 'alignment']
+          : ['quote'],
       },
       {
-        id: "person",
-        title: "Person",
-        fields: ["person", "additionalData"],
+        id: 'person',
+        title: 'Person',
+        fields: ['person', 'additionalData'],
       },
     ],
     properties: {
       quote: {
         title: intl.formatMessage(messages.quote),
-        widget: "textarea",
+        widget: 'textarea',
       },
       image: {
         title: intl.formatMessage(messages.image),
-        widget: "object_browser",
-        mode: "image",
+        widget: 'object_browser',
+        mode: 'image',
         allowExternals: true,
-        selectedItemAttrs: ["image_field", "image_scales"],
+        selectedItemAttrs: ['image_field', 'image_scales'],
       },
       person: {
         title: intl.formatMessage(messages.name),
@@ -62,9 +62,9 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
       alignment: {
         title: intl.formatMessage(messages.alignment),
-        widget: "align",
-        actions: ["left", "center", "right"],
-        default: "center",
+        widget: 'align',
+        actions: ['left', 'center', 'right'],
+        default: 'center',
       },
     },
     required: [],
