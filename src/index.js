@@ -19,7 +19,10 @@ const applyConfig = (config) => {
     restricted: false,
     mostUsed: true,
     sidebarTab: 1,
-    isImageAllowed: true,
+    // If this is set to 'true', the sidebar will show an image and alignment fields where you can put an image and align it.
+    // If an image is added and later on the image field get's disabled by setting 'showImageField' to 'false',
+    // the image and alignment fields aswell as the image won't show any longer.
+    showImageField: true,
   };
 
   return config;
