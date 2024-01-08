@@ -12,6 +12,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: components/schema
+# defaultMessage: Additional data
+msgid "Additional data"
+msgstr ""
+
+#: components/schema
+# defaultMessage: undefined
+msgid "Alignment"
+msgstr ""
+
+#: components/schema
 # defaultMessage: Image
 msgid "Image"
 msgstr ""
@@ -19,11 +29,6 @@ msgstr ""
 #: components/schema
 # defaultMessage: Name
 msgid "Name"
-msgstr ""
-
-#: components/schema
-# defaultMessage: Position
-msgid "Position"
 msgstr ""
 
 #: components/schema

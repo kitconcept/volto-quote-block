@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-01-05T15:35:12.099Z\n"
+"POT-Creation-Date: 2024-01-08T10:14:30.347Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,16 @@ msgstr ""
 "Domain: volto\n"
 
 #: components/schema
+# defaultMessage: Additional data
+msgid "Additional data"
+msgstr ""
+
+#: components/schema
+# defaultMessage: undefined
+msgid "Alignment"
+msgstr ""
+
+#: components/schema
 # defaultMessage: Image
 msgid "Image"
 msgstr ""
@@ -21,11 +31,6 @@ msgstr ""
 #: components/schema
 # defaultMessage: Name
 msgid "Name"
-msgstr ""
-
-#: components/schema
-# defaultMessage: Position
-msgid "Position"
 msgstr ""
 
 #: components/schema
