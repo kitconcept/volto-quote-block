@@ -17,7 +17,6 @@ const applyConfig = (config) => {
     // This has a good reason: Slate does not work in detached mode if enabled
     blockHasOwnFocusManagement: true,
     restricted: false,
-    mostUsed: true,
     sidebarTab: 1,
     // If this is set to 'true', the sidebar will show an image and alignment fields where you can put an image and align it.
     // If an image is added and later on the image field get's disabled by setting 'showImageField' to 'false',
