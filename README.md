@@ -52,7 +52,7 @@ Go to http://localhost:3000, login, create a new page. The quote block will show
 This option will enable an image and an alignment widget in the block settings, allowing you to add an image to your quote block and align it, left, right and centered to the quote. By default this option is set to `true`.
 
 ```js
-config.blocks.blocksConfig.heading.showImageField = true;
+config.blocks.blocksConfig.quote.showImageField = true;
 ```
 
 ## Credits
