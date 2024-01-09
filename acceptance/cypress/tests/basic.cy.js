@@ -1,71 +1,76 @@
-import {
-  getSlateEditorAndType,
-  getSelectedSlateEditor,
-} from '../support/slate';
-
-context('Basic Acceptance Tests', () => {
-  describe('Text Block Tests', () => {
+context("Basic Acceptance Tests", () => {
+  describe("Quote Block Tests", () => {
     beforeEach(() => {
-      cy.intercept('GET', `/**/*?expand*`).as('content');
-      cy.intercept('GET', '/**/Document').as('schema');
+      cy.intercept("GET", `/**/*?expand*`).as("content");
+      cy.intercept("GET", "/**/Document").as("schema");
 
       // given a logged in editor and a page in edit mode
       cy.autologin();
       cy.createContent({
-        contentType: 'Document',
-        contentId: 'document',
-        contentTitle: 'Document',
+        contentType: "Image",
+        contentId: "my-image",
+        contentTitle: "My Image",
       });
-      cy.visit('/');
-      cy.wait('@content');
+      cy.visit("/");
+      cy.wait("@content");
     });
 
-    it('As editor I can add a page with a text block', function () {
-      // when I add a page with a text block
-      cy.get('#toolbar-add').click();
-      cy.get('#toolbar-add-document').click();
-      cy.get('.documentFirstHeading')
-        .type('My Page')
-        .get('.documentFirstHeading')
-        .contains('My Page');
+    it("As editor I can add a page with a quote block", function () {
+      // when I add a page with a quote block
+      cy.get("#toolbar-add").click();
+      cy.get("#toolbar-add-document").click();
+      cy.get(".documentFirstHeading")
+        .type("My Page")
+        .get(".documentFirstHeading")
+        .contains("My Page");
 
-      getSlateEditorAndType(
-        '.block .slate-editor [contenteditable=true]',
-        'This is the text',
+      cy.get('[aria-multiline="false"] > p').click();
+      cy.get(".text-slate-editor-inner > .ui > .icon").click();
+      cy.get('[aria-label="Unfold Text blocks"]').click();
+      cy.get(
+        '[style="transition: opacity 500ms ease 0ms;"] > :nth-child(3) > .ui'
+      ).click();
+      cy.get("#field-quote").click();
+      cy.get("#field-quote").type(
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
       );
+      cy.get("#field-name").click();
+      cy.get("#field-name").type("Quotator");
+      cy.get("#field-additionalData").click();
+      cy.get("#field-additionalData").type("Position and/or Date");
 
-      getSelectedSlateEditor().contains('This is the text');
-      cy.get('#toolbar-save').click();
-      cy.wait('@content');
-      cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
+      cy.get("#toolbar-save").click();
     });
 
-    it('As editor I can add a link to a text block', function () {
-      cy.navigate('/document/edit');
-      cy.wait('@schema');
+    it("As editor I can add an image to a quote block", function () {
+      // when I add a page with a quote block with an image
+      cy.get("#toolbar-add").click();
+      cy.get("#toolbar-add-document").click();
+      cy.get(".documentFirstHeading")
+        .type("My Page")
+        .get(".documentFirstHeading")
+        .contains("My Page");
 
-      cy.get('.block.inner.title .documentFirstHeading');
-
-      cy.log('when I create a link');
-
-      cy.getSlateEditorAndType(
-        'Colorless green ideas sleep furiously.',
-      ).setSlateSelection('furiously');
-      cy.clickSlateButton('Add link');
-      cy.get('.slate-toolbar .link-form-container input').type(
-        'https://google.com{enter}',
+      cy.get('[aria-multiline="false"] > p').click();
+      cy.get(".text-slate-editor-inner > .ui > .icon").click();
+      cy.get('[aria-label="Unfold Text blocks"]').click();
+      cy.get(
+        '[style="transition: opacity 500ms ease 0ms;"] > :nth-child(3) > .ui'
+      ).click();
+      cy.get("#field-quote").click();
+      cy.get("#field-quote").type(
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
       );
+      cy.get("#field-name").click();
+      cy.get("#field-name").type("Quotator");
+      cy.get("#field-additionalData").click();
+      cy.get("#field-additionalData").type("Position and/or Date");
+      cy.get(
+        "#blockform-fieldset-default > .segment > .text > .grid > .stretched > .eight > .objectbrowser-field > .ui > .icon"
+      ).click();
+      cy.get('[title="/my-image (Image)"]').dblclick();
 
-      cy.get('#toolbar-save', { timeout: 10000 }).click();
-      cy.wait('@content');
-
-      cy.log('then the page view should contain a link');
-
-      cy.get('.container p').contains('Colorless green ideas sleep furiously.');
-      cy.get('.container p a')
-        .should('have.text', 'furiously')
-        .and('have.attr', 'href')
-        .and('include', 'https://google.com');
+      cy.get("#toolbar-save").click();
     });
   });
 });
