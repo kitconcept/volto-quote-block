@@ -1,4 +1,4 @@
-# @kitconcept/volto-quote-block
+# Volto Quote Block
 
 [![NPM](https://img.shields.io/npm/v/@kitconcept/volto-quote-block.svg)](https://www.npmjs.com/package/@kitconcept/volto-quote-block)
 [![Build Status](https://github.com/kitconcept/volto-quote-block/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-quote-block/actions)
