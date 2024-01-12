@@ -7,3 +7,15 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 1.0.0-alpha.1 (2024-01-09)
+
+### Internal
+
+- Add LICENSE @jonaspiterek [#2](https://github.com/kitconcept/volto-quote-block/pull/2)
+
+## 1.0.0-alpha.0 (2024-01-09)
+
+### Feature
+
+- Initial release @jonaspiterek
