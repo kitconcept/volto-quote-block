@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-quote-block",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "volto-quote-block: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
