@@ -1,0 +1,29 @@
+.block-editor-quote :focus-visible {
+  outline: none;
+}
+
+.block.quote blockquote {
+  &.DE .slate-editor p {
+    &::before {
+      content: '„';
+    }
+  }
+
+  &.DE .slate-editor p {
+    &::after {
+      content: '“';
+    }
+  }
+
+  &.EN .slate-editor p {
+    &::before {
+      content: '"';
+    }
+  }
+
+  &.EN .slate-editor p {
+    &::after {
+      content: '"';
+    }
+  }
+}

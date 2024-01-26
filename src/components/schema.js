@@ -2,6 +2,10 @@ import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
+  language: {
+    id: 'Language',
+    defaultMessage: 'Language',
+  },
   quote: {
     id: 'Quote',
     defaultMessage: 'Quote',
@@ -25,6 +29,24 @@ const messages = defineMessages({
 });
 
 export const QuoteBlockSchema = ({ intl }) => {
+  const defaultLang = config.blocks?.blocksConfig?.quote?.defaultLang;
+  const allowed_languages =
+    config.blocks?.blocksConfig?.quote?.allowed_languages;
+  const DEFAULT_LANGUAGES = [
+    ['EN', 'EN'],
+    ['DE', 'DE'],
+  ];
+
+  const filterDefaultLanguages = () => {
+    if (allowed_languages) {
+      return DEFAULT_LANGUAGES.filter((item) =>
+        allowed_languages.includes(item[0]),
+      );
+    } else {
+      return DEFAULT_LANGUAGES;
+    }
+  };
+
   return {
     title: intl.formatMessage(messages.quote),
     block: 'quote',
@@ -32,9 +54,9 @@ export const QuoteBlockSchema = ({ intl }) => {
       {
         id: 'default',
         title: 'Default',
-        fields: config?.blocks?.blocksConfig?.quote.showImageField
-          ? ['quote', 'image', 'alignment']
-          : ['quote'],
+        fields: config?.blocks?.blocksConfig?.quote?.showImageField
+          ? ['language', 'image', 'alignment']
+          : ['language'],
       },
       {
         id: 'person',
@@ -43,9 +65,11 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
     ],
     properties: {
-      quote: {
-        title: intl.formatMessage(messages.quote),
-        widget: 'textarea',
+      language: {
+        title: intl.formatMessage(messages.language),
+        choices: filterDefaultLanguages(),
+        default: defaultLang,
+        noValueOption: false,
       },
       image: {
         title: intl.formatMessage(messages.image),
