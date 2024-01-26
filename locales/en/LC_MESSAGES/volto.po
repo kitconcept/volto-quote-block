@@ -27,6 +27,11 @@ msgid "Image"
 msgstr ""
 
 #: components/schema
+# defaultMessage: Language
+msgid "Language"
+msgstr ""
+
+#: components/schema
 # defaultMessage: Name
 msgid "Name"
 msgstr ""
