@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.3 (2024-01-30)
+
+### Feature
+
+- - implement inline text editor [@jonaspiterek] [#4](https://github.com/kitconcept/volto-quote-block/pull/4)
+- - implement language selector to display typographical correct quotation marks for different languages [@jonaspiterek] [#5](https://github.com/kitconcept/volto-quote-block/pull/5)
+
 ## 1.0.0-alpha.2 (2024-01-12)
 
 ### Internal
