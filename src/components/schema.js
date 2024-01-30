@@ -2,13 +2,13 @@ import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
-  language: {
-    id: 'Language',
-    defaultMessage: 'Language',
-  },
   quote: {
     id: 'Quote',
     defaultMessage: 'Quote',
+  },
+  language: {
+    id: 'Language',
+    defaultMessage: 'Language',
   },
   image: {
     id: 'Image',
@@ -18,13 +18,18 @@ const messages = defineMessages({
     id: 'Name',
     defaultMessage: 'Name',
   },
-  additionalData: {
-    id: 'Additional data',
-    defaultMessage: 'Additional data',
+  additional_information: {
+    id: 'Additional information',
+    defaultMessage: 'Additional information',
   },
-  alignment: {
-    id: 'Alignment',
-    defineMessage: 'Alignment',
+  cite: {
+    id: 'Cite',
+    defaultMessage: 'Cite',
+  },
+  description: {
+    id: 'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+    defaultMessage:
+      'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
   },
 });
 
@@ -55,13 +60,13 @@ export const QuoteBlockSchema = ({ intl }) => {
         id: 'default',
         title: 'Default',
         fields: config?.blocks?.blocksConfig?.quote?.showImageField
-          ? ['language', 'image', 'alignment']
+          ? ['language', 'image']
           : ['language'],
       },
       {
         id: 'person',
         title: 'Person',
-        fields: ['name', 'additionalData'],
+        fields: ['name', 'additional_information', 'cite'],
       },
     ],
     properties: {
@@ -81,14 +86,13 @@ export const QuoteBlockSchema = ({ intl }) => {
       name: {
         title: intl.formatMessage(messages.name),
       },
-      additionalData: {
-        title: intl.formatMessage(messages.additionalData),
+      additional_information: {
+        title: intl.formatMessage(messages.additional_information),
       },
-      alignment: {
-        title: intl.formatMessage(messages.alignment),
-        widget: 'align',
-        actions: ['left', 'center', 'right'],
-        default: 'center',
+      cite: {
+        title: intl.formatMessage(messages.cite),
+        widget: 'url',
+        description: intl.formatMessage(messages.description),
       },
     },
     required: [],

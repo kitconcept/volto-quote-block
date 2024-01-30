@@ -2,28 +2,26 @@
   outline: none;
 }
 
-.block.quote blockquote {
-  &.DE .slate-editor p {
+.block-editor-quote blockquote div {
+  margin: 0em 0em 1em;
+}
+
+.block.quote blockquote:not(.edit) {
+  &.EN p {
+    &::before {
+      content: '"';
+    }
+    &::after {
+      content: '"';
+    }
+  }
+
+  &.DE p {
     &::before {
       content: '„';
     }
-  }
-
-  &.DE .slate-editor p {
     &::after {
       content: '“';
-    }
-  }
-
-  &.EN .slate-editor p {
-    &::before {
-      content: '"';
-    }
-  }
-
-  &.EN .slate-editor p {
-    &::after {
-      content: '"';
     }
   }
 }
