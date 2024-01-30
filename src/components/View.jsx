@@ -45,12 +45,12 @@ const View = (props) => {
             <DetachedTextBlockEditor {...customSlateSettings} />
           )}
           <footer>
-            {data.name}
+            {`${data.name}, `}
             {data.additional_information && data.cite ? (
-              <cite>{`, ${data.additional_information}`}</cite>
+              <cite>{data.additional_information}</cite>
             ) : (
               data.additional_information && (
-                <span>{`, ${data.additional_information}`}</span>
+                <span>{data.additional_information}</span>
               )
             )}
           </footer>
