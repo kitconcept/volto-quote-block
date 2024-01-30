@@ -12,18 +12,23 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: components/schema
-# defaultMessage: Additional data
-msgid "Additional data"
+# defaultMessage: Additional information
+msgid "Additional information"
 msgstr ""
 
 #: components/schema
-# defaultMessage: undefined
-msgid "Alignment"
+# defaultMessage: Cite
+msgid "Cite"
 msgstr ""
 
 #: components/schema
 # defaultMessage: Image
 msgid "Image"
+msgstr ""
+
+#: components/schema
+# defaultMessage: Language
+msgid "Language"
 msgstr ""
 
 #: components/schema
@@ -34,4 +39,9 @@ msgstr ""
 #: components/schema
 # defaultMessage: Quote
 msgid "Quote"
+msgstr ""
+
+#: components/schema
+# defaultMessage: This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.
+msgid "This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms."
 msgstr ""

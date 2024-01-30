@@ -6,6 +6,10 @@ const messages = defineMessages({
     id: 'Quote',
     defaultMessage: 'Quote',
   },
+  language: {
+    id: 'Language',
+    defaultMessage: 'Language',
+  },
   image: {
     id: 'Image',
     defaultMessage: 'Image',
@@ -14,17 +18,40 @@ const messages = defineMessages({
     id: 'Name',
     defaultMessage: 'Name',
   },
-  additionalData: {
-    id: 'Additional data',
-    defaultMessage: 'Additional data',
+  additional_information: {
+    id: 'Additional information',
+    defaultMessage: 'Additional information',
   },
-  alignment: {
-    id: 'Alignment',
-    defineMessage: 'Alignment',
+  cite: {
+    id: 'Cite',
+    defaultMessage: 'Cite',
+  },
+  description: {
+    id: 'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+    defaultMessage:
+      'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
   },
 });
 
 export const QuoteBlockSchema = ({ intl }) => {
+  const defaultLang = config.blocks?.blocksConfig?.quote?.defaultLang;
+  const allowed_languages =
+    config.blocks?.blocksConfig?.quote?.allowed_languages;
+  const DEFAULT_LANGUAGES = [
+    ['EN', 'EN'],
+    ['DE', 'DE'],
+  ];
+
+  const filterDefaultLanguages = () => {
+    if (allowed_languages) {
+      return DEFAULT_LANGUAGES.filter((item) =>
+        allowed_languages.includes(item[0]),
+      );
+    } else {
+      return DEFAULT_LANGUAGES;
+    }
+  };
+
   return {
     title: intl.formatMessage(messages.quote),
     block: 'quote',
@@ -32,20 +59,22 @@ export const QuoteBlockSchema = ({ intl }) => {
       {
         id: 'default',
         title: 'Default',
-        fields: config?.blocks?.blocksConfig?.quote.showImageField
-          ? ['quote', 'image', 'alignment']
-          : ['quote'],
+        fields: config?.blocks?.blocksConfig?.quote?.showImageField
+          ? ['language', 'image']
+          : ['language'],
       },
       {
         id: 'person',
         title: 'Person',
-        fields: ['name', 'additionalData'],
+        fields: ['name', 'additional_information', 'cite'],
       },
     ],
     properties: {
-      quote: {
-        title: intl.formatMessage(messages.quote),
-        widget: 'textarea',
+      language: {
+        title: intl.formatMessage(messages.language),
+        choices: filterDefaultLanguages(),
+        default: defaultLang,
+        noValueOption: false,
       },
       image: {
         title: intl.formatMessage(messages.image),
@@ -57,14 +86,13 @@ export const QuoteBlockSchema = ({ intl }) => {
       name: {
         title: intl.formatMessage(messages.name),
       },
-      additionalData: {
-        title: intl.formatMessage(messages.additionalData),
+      additional_information: {
+        title: intl.formatMessage(messages.additional_information),
       },
-      alignment: {
-        title: intl.formatMessage(messages.alignment),
-        widget: 'align',
-        actions: ['left', 'center', 'right'],
-        default: 'center',
+      cite: {
+        title: intl.formatMessage(messages.cite),
+        widget: 'url',
+        description: intl.formatMessage(messages.description),
       },
     },
     required: [],

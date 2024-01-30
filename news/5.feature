@@ -1,0 +1,1 @@
+- implement language selector to display typographical correct quotation marks for different languages [@jonaspiterek]

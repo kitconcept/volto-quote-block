@@ -30,14 +30,15 @@ context("Basic Acceptance Tests", () => {
       cy.get(
         '[style="transition: opacity 500ms ease 0ms;"] > :nth-child(3) > .ui'
       ).click();
-      cy.get("#field-quote").click();
-      cy.get("#field-quote").type(
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-      );
+      cy.get(".block-editor-quote .text-slate-editor-inner .slate-editor p")
+        .click()
+        .type(
+          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+        );
       cy.get("#field-name").click();
       cy.get("#field-name").type("Quotator");
-      cy.get("#field-additionalData").click();
-      cy.get("#field-additionalData").type("Position and/or Date");
+      cy.get("#field-additional_information").click();
+      cy.get("#field-additional_information").type("Position and/or Date");
 
       cy.get("#toolbar-save").click();
     });
@@ -57,14 +58,15 @@ context("Basic Acceptance Tests", () => {
       cy.get(
         '[style="transition: opacity 500ms ease 0ms;"] > :nth-child(3) > .ui'
       ).click();
-      cy.get("#field-quote").click();
-      cy.get("#field-quote").type(
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-      );
+      cy.get(".block-editor-quote .text-slate-editor-inner .slate-editor p")
+        .click()
+        .type(
+          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+        );
       cy.get("#field-name").click();
       cy.get("#field-name").type("Quotator");
-      cy.get("#field-additionalData").click();
-      cy.get("#field-additionalData").type("Position and/or Date");
+      cy.get("#field-additional_information").click();
+      cy.get("#field-additional_information").type("Position and/or Date");
       cy.get(
         "#blockform-fieldset-default > .segment > .text > .grid > .stretched > .eight > .objectbrowser-field > .ui > .icon"
       ).click();
