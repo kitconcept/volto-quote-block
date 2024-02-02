@@ -1,9 +1,9 @@
-import React from "react";
-import config from "@plone/volto/registry";
-import { flattenToAppURL } from "@plone/volto/helpers";
-import cx from "classnames";
-import { DetachedTextBlockEditor } from "@plone/volto-slate/blocks/Text/DetachedTextBlockEditor";
-import { TextBlockView } from "@plone/volto-slate/blocks/Text";
+import React from 'react';
+import config from '@plone/volto/registry';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import cx from 'classnames';
+import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const View = (props) => {
   const { data, isEditMode } = props;
@@ -13,7 +13,7 @@ const View = (props) => {
     slateSettings: {
       ...config.settings.slate,
       toolbarButtons: config.settings.slate.toolbarButtons.filter(
-        (index) => index - config.settings.slate.toolbarButtons
+        (index) => index - config.settings.slate.toolbarButtons,
       ),
     },
   };
@@ -25,7 +25,7 @@ const View = (props) => {
           data.image?.[0] && (
             <div className="image-wrapper">
               <img
-                src={`${flattenToAppURL(data.image?.[0]?.["@id"])}/${
+                src={`${flattenToAppURL(data.image?.[0]?.['@id'])}/${
                   data.image?.[0]?.image_scales?.image[0]?.scales?.preview
                     ?.download
                 }}`}
@@ -37,7 +37,7 @@ const View = (props) => {
           )}
         <blockquote
           cite={data.cite}
-          className={cx(data.language, isEditMode && "edit")}
+          className={cx(data.language, isEditMode && 'edit')}
         >
           {!isEditMode ? (
             <TextBlockView {...props} />
@@ -46,7 +46,7 @@ const View = (props) => {
           )}
           <footer>
             {data.author && data.additional_information
-              ? data.author + ", "
+              ? data.author + ', '
               : data.author}
             {data.additional_information && data.cite ? (
               <cite>{data.additional_information}</cite>
