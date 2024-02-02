@@ -35,8 +35,8 @@ context("Basic Acceptance Tests", () => {
         .type(
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         );
-      cy.get("#field-name").click();
-      cy.get("#field-name").type("Quotator");
+      cy.get("#field-author").click();
+      cy.get("#field-author").type("Quotator");
       cy.get("#field-additional_information").click();
       cy.get("#field-additional_information").type("Position and/or Date");
 
@@ -63,8 +63,8 @@ context("Basic Acceptance Tests", () => {
         .type(
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         );
-      cy.get("#field-name").click();
-      cy.get("#field-name").type("Quotator");
+      cy.get("#field-author").click();
+      cy.get("#field-author").type("Quotator");
       cy.get("#field-additional_information").click();
       cy.get("#field-additional_information").type("Position and/or Date");
       cy.get(
