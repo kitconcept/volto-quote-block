@@ -14,9 +14,9 @@ const messages = defineMessages({
     id: 'Image',
     defaultMessage: 'Image',
   },
-  name: {
-    id: 'Name',
-    defaultMessage: 'Name',
+  author: {
+    id: 'Author',
+    defaultMessage: 'Author',
   },
   additional_information: {
     id: 'Additional information',
@@ -66,7 +66,7 @@ export const QuoteBlockSchema = ({ intl }) => {
       {
         id: 'person',
         title: 'Person',
-        fields: ['name', 'additional_information', 'cite'],
+        fields: ['author', 'additional_information', 'cite'],
       },
     ],
     properties: {
@@ -83,8 +83,8 @@ export const QuoteBlockSchema = ({ intl }) => {
         allowExternals: true,
         selectedItemAttrs: ['image_field', 'image_scales'],
       },
-      name: {
-        title: intl.formatMessage(messages.name),
+      author: {
+        title: intl.formatMessage(messages.author),
       },
       additional_information: {
         title: intl.formatMessage(messages.additional_information),

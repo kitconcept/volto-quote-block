@@ -45,7 +45,9 @@ const View = (props) => {
             <DetachedTextBlockEditor {...customSlateSettings} />
           )}
           <footer>
-            {`${data.name}, `}
+            {data.author && data.additional_information
+              ? data.author + ', '
+              : data.author}
             {data.additional_information && data.cite ? (
               <cite>{data.additional_information}</cite>
             ) : (
