@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.5 (2024-02-02)
+
+### Bugfix
+
+- - fix allowedLanguages config option [@jonaspiterek] [#10](https://github.com/kitconcept/volto-quote-block/pull/10)
+
 ## 1.0.0-alpha.4 (2024-02-02)
 
 ### Bugfix
