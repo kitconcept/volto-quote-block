@@ -35,17 +35,16 @@ const messages = defineMessages({
 
 export const QuoteBlockSchema = ({ intl }) => {
   const defaultLang = config.blocks?.blocksConfig?.quote?.defaultLang;
-  const allowed_languages =
-    config.blocks?.blocksConfig?.quote?.allowed_languages;
+  const allowedLanguages = config.blocks?.blocksConfig?.quote?.allowedLanguages;
   const DEFAULT_LANGUAGES = [
     ['EN', 'EN'],
     ['DE', 'DE'],
   ];
 
   const filterDefaultLanguages = () => {
-    if (allowed_languages) {
+    if (allowedLanguages) {
       return DEFAULT_LANGUAGES.filter((item) =>
-        allowed_languages.includes(item[0]),
+        allowedLanguages.includes(item[0]),
       );
     } else {
       return DEFAULT_LANGUAGES;
