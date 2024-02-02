@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.4 (2024-02-02)
+
+### Bugfix
+
+- - fix name field beeing undefined if emtpy, rename field name to author [@jonaspiterek] [#7](https://github.com/kitconcept/volto-quote-block/pull/7)
+
 ## 1.0.0-alpha.3 (2024-01-30)
 
 ### Feature
