@@ -17,6 +17,11 @@ msgid "Additional information"
 msgstr ""
 
 #: components/schema
+# defaultMessage: Author
+msgid "Author"
+msgstr ""
+
+#: components/schema
 # defaultMessage: Cite
 msgid "Cite"
 msgstr ""
@@ -29,11 +34,6 @@ msgstr ""
 #: components/schema
 # defaultMessage: Language
 msgid "Language"
-msgstr ""
-
-#: components/schema
-# defaultMessage: Name
-msgid "Name"
 msgstr ""
 
 #: components/schema

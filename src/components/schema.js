@@ -1,35 +1,35 @@
-import config from '@plone/volto/registry';
-import { defineMessages } from 'react-intl';
+import config from "@plone/volto/registry";
+import { defineMessages } from "react-intl";
 
 const messages = defineMessages({
   quote: {
-    id: 'Quote',
-    defaultMessage: 'Quote',
+    id: "Quote",
+    defaultMessage: "Quote",
   },
   language: {
-    id: 'Language',
-    defaultMessage: 'Language',
+    id: "Language",
+    defaultMessage: "Language",
   },
   image: {
-    id: 'Image',
-    defaultMessage: 'Image',
+    id: "Image",
+    defaultMessage: "Image",
   },
-  name: {
-    id: 'Name',
-    defaultMessage: 'Name',
+  author: {
+    id: "Author",
+    defaultMessage: "Author",
   },
   additional_information: {
-    id: 'Additional information',
-    defaultMessage: 'Additional information',
+    id: "Additional information",
+    defaultMessage: "Additional information",
   },
   cite: {
-    id: 'Cite',
-    defaultMessage: 'Cite',
+    id: "Cite",
+    defaultMessage: "Cite",
   },
   description: {
-    id: 'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+    id: "This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.",
     defaultMessage:
-      'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+      "This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.",
   },
 });
 
@@ -38,14 +38,14 @@ export const QuoteBlockSchema = ({ intl }) => {
   const allowed_languages =
     config.blocks?.blocksConfig?.quote?.allowed_languages;
   const DEFAULT_LANGUAGES = [
-    ['EN', 'EN'],
-    ['DE', 'DE'],
+    ["EN", "EN"],
+    ["DE", "DE"],
   ];
 
   const filterDefaultLanguages = () => {
     if (allowed_languages) {
       return DEFAULT_LANGUAGES.filter((item) =>
-        allowed_languages.includes(item[0]),
+        allowed_languages.includes(item[0])
       );
     } else {
       return DEFAULT_LANGUAGES;
@@ -54,19 +54,19 @@ export const QuoteBlockSchema = ({ intl }) => {
 
   return {
     title: intl.formatMessage(messages.quote),
-    block: 'quote',
+    block: "quote",
     fieldsets: [
       {
-        id: 'default',
-        title: 'Default',
+        id: "default",
+        title: "Default",
         fields: config?.blocks?.blocksConfig?.quote?.showImageField
-          ? ['language', 'image']
-          : ['language'],
+          ? ["language", "image"]
+          : ["language"],
       },
       {
-        id: 'person',
-        title: 'Person',
-        fields: ['name', 'additional_information', 'cite'],
+        id: "person",
+        title: "Person",
+        fields: ["author", "additional_information", "cite"],
       },
     ],
     properties: {
@@ -78,20 +78,20 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
       image: {
         title: intl.formatMessage(messages.image),
-        widget: 'object_browser',
-        mode: 'image',
+        widget: "object_browser",
+        mode: "image",
         allowExternals: true,
-        selectedItemAttrs: ['image_field', 'image_scales'],
+        selectedItemAttrs: ["image_field", "image_scales"],
       },
-      name: {
-        title: intl.formatMessage(messages.name),
+      author: {
+        title: intl.formatMessage(messages.author),
       },
       additional_information: {
         title: intl.formatMessage(messages.additional_information),
       },
       cite: {
         title: intl.formatMessage(messages.cite),
-        widget: 'url',
+        widget: "url",
         description: intl.formatMessage(messages.description),
       },
     },
