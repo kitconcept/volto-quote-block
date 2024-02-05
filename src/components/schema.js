@@ -6,7 +6,7 @@ const messages = defineMessages({
     id: 'Quote',
     defaultMessage: 'Quote',
   },
-  language: {
+  quotationLanguage: {
     id: 'Language',
     defaultMessage: 'Language',
   },
@@ -59,8 +59,8 @@ export const QuoteBlockSchema = ({ intl }) => {
         id: 'default',
         title: 'Default',
         fields: config?.blocks?.blocksConfig?.quote?.showImageField
-          ? ['language', 'image']
-          : ['language'],
+          ? ['quotationLanguage', 'image']
+          : ['quotationLanguage'],
       },
       {
         id: 'person',
@@ -69,8 +69,8 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
     ],
     properties: {
-      language: {
-        title: intl.formatMessage(messages.language),
+      quotationLanguage: {
+        title: intl.formatMessage(messages.quotationLanguage),
         choices: filterDefaultLanguages(),
         default: defaultLang,
         noValueOption: false,
