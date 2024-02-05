@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.6 (2024-02-05)
+
+### Bugfix
+
+- - rename language field to quotationLanguage [@jonaspiterek] [#12](https://github.com/kitconcept/volto-quote-block/pull/12)
+
 ## 1.0.0-alpha.5 (2024-02-02)
 
 ### Bugfix
