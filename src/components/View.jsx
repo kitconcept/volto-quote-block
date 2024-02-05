@@ -37,7 +37,7 @@ const View = (props) => {
           )}
         <blockquote
           cite={data.cite}
-          className={cx(data.language, isEditMode && 'edit')}
+          className={cx(!isEditMode && data.quotationLanguage)}
         >
           {!isEditMode ? (
             <TextBlockView {...props} />
