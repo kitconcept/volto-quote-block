@@ -27,9 +27,9 @@ const messages = defineMessages({
     defaultMessage: 'Cite',
   },
   description: {
-    id: 'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+    id: 'This field is not exposed, it is only used by accessibility tools to provide a better experience.',
     defaultMessage:
-      'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+      'This field is not exposed, it is only used by accessibility tools to provide a better experience.',
   },
   accessibility: {
     id: 'accessibility',
@@ -83,6 +83,7 @@ export const QuoteBlockSchema = ({ intl }) => {
         choices: filterDefaultLanguages(),
         default: defaultLang,
         noValueOption: false,
+        description: intl.formatMessage(messages.description),
       },
       image: {
         title: intl.formatMessage(messages.image),

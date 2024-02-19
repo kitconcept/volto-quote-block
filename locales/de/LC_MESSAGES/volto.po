@@ -42,9 +42,9 @@ msgid "Quote"
 msgstr "Zitat"
 
 #: components/schema
-# defaultMessage: This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.
-msgid "This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms."
-msgstr "Dieses Feld erwartet eine URL als Eingabe (optional). Wenn eine URL angegeben wird, beziehen sich die Zusatzinformationen auf diese URL, um Barrierefreiheit zu gewährleisten."
+# defaultMessage: This field is not exposed, it is only used by accessibility tools to provide a better experience.
+msgid "This field is not exposed, it is only used by accessibility tools to provide a better experience."
+msgstr "Dieses Fled wird nicht angezeigt, es wird nur von Barrierefreiheittools verwendet, um eine bessere Nutzererfahrung zu gewährleisten."
 
 #: components/schema
 # defaultMessage: Accessibility
