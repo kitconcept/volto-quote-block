@@ -48,7 +48,7 @@ export const QuoteBlockSchema = ({ intl }) => {
   const filterDefaultLanguages = () => {
     if (allowedLanguages) {
       return DEFAULT_LANGUAGES.filter((item) =>
-        allowedLanguages.includes(item[0])
+        allowedLanguages.includes(item[0]),
       );
     } else {
       return DEFAULT_LANGUAGES;
