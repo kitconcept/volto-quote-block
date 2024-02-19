@@ -4,16 +4,18 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import cx from 'classnames';
 import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import { useSelector } from 'react-redux';
 
 const View = (props) => {
   const { data, isEditMode } = props;
+  const language = useSelector((state) => state.intl.locale);
 
   const customSlateSettings = {
     ...props,
     slateSettings: {
       ...config.settings.slate,
       toolbarButtons: config.settings.slate.toolbarButtons.filter(
-        (index) => index - config.settings.slate.toolbarButtons,
+        (index) => index - config.settings.slate.toolbarButtons
       ),
     },
   };
@@ -37,7 +39,8 @@ const View = (props) => {
           )}
         <blockquote
           cite={data.cite}
-          className={cx(!isEditMode && data.quotationLanguage)}
+          lang={data.quotationLanguage}
+          siteLang={language}
         >
           {!isEditMode ? (
             <TextBlockView {...props} />

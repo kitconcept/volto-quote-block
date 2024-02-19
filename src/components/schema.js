@@ -37,14 +37,14 @@ export const QuoteBlockSchema = ({ intl }) => {
   const defaultLang = config.blocks?.blocksConfig?.quote?.defaultLang;
   const allowedLanguages = config.blocks?.blocksConfig?.quote?.allowedLanguages;
   const DEFAULT_LANGUAGES = [
-    ['EN', 'EN'],
-    ['DE', 'DE'],
+    ['en', 'en'],
+    ['de', 'de'],
   ];
 
   const filterDefaultLanguages = () => {
     if (allowedLanguages) {
       return DEFAULT_LANGUAGES.filter((item) =>
-        allowedLanguages.includes(item[0]),
+        allowedLanguages.includes(item[0])
       );
     } else {
       return DEFAULT_LANGUAGES;
@@ -59,13 +59,18 @@ export const QuoteBlockSchema = ({ intl }) => {
         id: 'default',
         title: 'Default',
         fields: config?.blocks?.blocksConfig?.quote?.showImageField
-          ? ['quotationLanguage', 'image']
-          : ['quotationLanguage'],
+          ? ['image']
+          : [],
       },
       {
-        id: 'person',
-        title: 'Person',
-        fields: ['author', 'additional_information', 'cite'],
+        id: 'author',
+        title: 'Author',
+        fields: ['author', 'additional_information'],
+      },
+      {
+        id: 'accessibility',
+        title: 'Accessibility',
+        fields: ['quotationLanguage', 'cite'],
       },
     ],
     properties: {

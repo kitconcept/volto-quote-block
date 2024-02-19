@@ -22,8 +22,8 @@ const applyConfig = (config) => {
     // If an image is added and later on the image field get's disabled by setting 'showImageField' to 'false',
     // the image and alignment fields aswell as the image won't show any longer.
     showImageField: true,
-    defaultLang: 'EN',
-    allowedLanguages: ['EN', 'DE'],
+    defaultLang: 'en',
+    allowedLanguages: ['en', 'de'],
   };
 
   return config;
