@@ -1,7 +1,6 @@
 import React from 'react';
 import config from '@plone/volto/registry';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import cx from 'classnames';
 import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { useSelector } from 'react-redux';
