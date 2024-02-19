@@ -31,6 +31,10 @@ const messages = defineMessages({
     defaultMessage:
       'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
   },
+  accessibility: {
+    id: 'accessibility',
+    defaultMessage: 'Accessibility',
+  },
 });
 
 export const QuoteBlockSchema = ({ intl }) => {
@@ -44,7 +48,7 @@ export const QuoteBlockSchema = ({ intl }) => {
   const filterDefaultLanguages = () => {
     if (allowedLanguages) {
       return DEFAULT_LANGUAGES.filter((item) =>
-        allowedLanguages.includes(item[0]),
+        allowedLanguages.includes(item[0])
       );
     } else {
       return DEFAULT_LANGUAGES;
@@ -64,12 +68,12 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
       {
         id: 'author',
-        title: 'Author',
+        title: intl.formatMessage(messages.author),
         fields: ['author', 'additional_information'],
       },
       {
         id: 'accessibility',
-        title: 'Accessibility',
+        title: intl.formatMessage(messages.accessibility),
         fields: ['quotationLanguage', 'cite'],
       },
     ],
