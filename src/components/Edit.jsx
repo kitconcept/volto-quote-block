@@ -29,6 +29,7 @@ const Edit = (props) => {
   return (
     <div
       className="block quote"
+      role="presentation"
       onKeyDown={(e) =>
         handleEnterKey(e, props.index, props.id, props.blockNode.current)
       }
