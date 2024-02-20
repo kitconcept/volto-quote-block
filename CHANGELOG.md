@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.7 (2024-02-20)
+
+### Feature
+
+- - set quotation marks by site language [@jonaspiterek]
+  - combine "language" and "cite" fields in new accessibility fieldset [@jonaspiterek] [#14](https://github.com/kitconcept/volto-quote-block/pull/14)
+
 ## 1.0.0-alpha.6 (2024-02-05)
 
 ### Bugfix

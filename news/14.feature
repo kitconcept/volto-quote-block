@@ -1,2 +1,0 @@
-- set quotation marks by site language [@jonaspiterek]
-- combine "language" and "cite" fields in new accessibility fieldset [@jonaspiterek]
