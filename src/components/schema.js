@@ -27,9 +27,13 @@ const messages = defineMessages({
     defaultMessage: 'Cite',
   },
   description: {
-    id: 'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+    id: 'This field is not exposed, it is only used by accessibility tools to provide a better experience.',
     defaultMessage:
-      'This field expects an URL as input (optional). If an URL is provided the additional information will have a relation to this URL, this is due to accessibility norms.',
+      'This field is not exposed, it is only used by accessibility tools to provide a better experience.',
+  },
+  accessibility: {
+    id: 'accessibility',
+    defaultMessage: 'Accessibility',
   },
 });
 
@@ -37,8 +41,8 @@ export const QuoteBlockSchema = ({ intl }) => {
   const defaultLang = config.blocks?.blocksConfig?.quote?.defaultLang;
   const allowedLanguages = config.blocks?.blocksConfig?.quote?.allowedLanguages;
   const DEFAULT_LANGUAGES = [
-    ['EN', 'EN'],
-    ['DE', 'DE'],
+    ['en', 'en'],
+    ['de', 'de'],
   ];
 
   const filterDefaultLanguages = () => {
@@ -59,13 +63,18 @@ export const QuoteBlockSchema = ({ intl }) => {
         id: 'default',
         title: 'Default',
         fields: config?.blocks?.blocksConfig?.quote?.showImageField
-          ? ['quotationLanguage', 'image']
-          : ['quotationLanguage'],
+          ? ['image']
+          : [],
       },
       {
-        id: 'person',
-        title: 'Person',
-        fields: ['author', 'additional_information', 'cite'],
+        id: 'author',
+        title: intl.formatMessage(messages.author),
+        fields: ['author', 'additional_information'],
+      },
+      {
+        id: 'accessibility',
+        title: intl.formatMessage(messages.accessibility),
+        fields: ['quotationLanguage', 'cite'],
       },
     ],
     properties: {
@@ -74,6 +83,7 @@ export const QuoteBlockSchema = ({ intl }) => {
         choices: filterDefaultLanguages(),
         default: defaultLang,
         noValueOption: false,
+        description: intl.formatMessage(messages.description),
       },
       image: {
         title: intl.formatMessage(messages.image),

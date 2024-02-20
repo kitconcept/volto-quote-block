@@ -6,8 +6,8 @@
   margin: 0em 0em 1em;
 }
 
-.block.quote blockquote:not(.edit) {
-  &.EN p {
+.block.quote blockquote:not(.block-editor-quote blockquote) {
+  &[siteLang='en'] p {
     &::before {
       content: '"';
     }
@@ -17,7 +17,7 @@
     }
   }
 
-  &.DE p {
+  &[siteLang='de'] p {
     &::before {
       content: '„';
     }
