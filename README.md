@@ -55,24 +55,6 @@ This option will enable an image and an alignment widget in the block settings, 
 config.blocks.blocksConfig.quote.showImageField = true;
 ```
 
-#### `defaultLang`
-
-This option will set the default language in which the quotation marks should be shown. By default this option is set to `EN`.
-
-```js
-config.blocks.blocksConfig.quote.defaultLang = 'EN';
-```
-
-#### `allowedLanguages`
-
-This option will set the languages that are available to show the . By default this option is set to `['EN', 'DE']`.
-
-```js
-config.blocks.blocksConfig.quote.allowedLanguages = ['EN', 'DE'];
-```
-
-Currently available languages: EN, DE
-
 ## Credits
 
 <img alt="Deutsches Zentrum für Luft- und Raumfahrt (DLR)" width="200px" src="https://www.dlr.de/static/media/Logo-de.697a8e1f.svg" style="background-color:white">

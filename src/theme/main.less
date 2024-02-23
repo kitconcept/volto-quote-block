@@ -2,12 +2,12 @@
   outline: none;
 }
 
-.block-editor-quote blockquote div {
+.block-editor-quote blockquote > div {
   margin: 0em 0em 1em;
 }
 
 .block.quote blockquote:not(.block-editor-quote blockquote) {
-  &[siteLang='en'] p {
+  &[locale='en'] p {
     &::before {
       content: '"';
     }
@@ -17,7 +17,7 @@
     }
   }
 
-  &[siteLang='de'] p {
+  &[locale='de'] p {
     &::before {
       content: '„';
     }
