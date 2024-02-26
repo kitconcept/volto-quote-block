@@ -3,11 +3,9 @@ import config from '@plone/volto/registry';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import { useSelector } from 'react-redux';
 
 const View = (props) => {
-  const { data, isEditMode } = props;
-  const language = useSelector((state) => state.intl.locale);
+  const { data, isEditMode, intl } = props;
 
   const customSlateSettings = {
     ...props,
@@ -39,7 +37,7 @@ const View = (props) => {
         <blockquote
           cite={data.cite}
           lang={data.quotationLanguage}
-          siteLang={language}
+          locale={intl.locale}
         >
           {!isEditMode ? (
             <TextBlockView {...props} />

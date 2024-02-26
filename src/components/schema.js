@@ -38,23 +38,6 @@ const messages = defineMessages({
 });
 
 export const QuoteBlockSchema = ({ intl }) => {
-  const defaultLang = config.blocks?.blocksConfig?.quote?.defaultLang;
-  const allowedLanguages = config.blocks?.blocksConfig?.quote?.allowedLanguages;
-  const DEFAULT_LANGUAGES = [
-    ['en', 'en'],
-    ['de', 'de'],
-  ];
-
-  const filterDefaultLanguages = () => {
-    if (allowedLanguages) {
-      return DEFAULT_LANGUAGES.filter((item) =>
-        allowedLanguages.includes(item[0]),
-      );
-    } else {
-      return DEFAULT_LANGUAGES;
-    }
-  };
-
   return {
     title: intl.formatMessage(messages.quote),
     block: 'quote',
@@ -62,9 +45,9 @@ export const QuoteBlockSchema = ({ intl }) => {
       {
         id: 'default',
         title: 'Default',
-        fields: config?.blocks?.blocksConfig?.quote?.showImageField
-          ? ['image']
-          : [],
+        fields: config?.blocks?.blocksConfig?.quote?.showImageField && [
+          'image',
+        ],
       },
       {
         id: 'author',
@@ -78,13 +61,6 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
     ],
     properties: {
-      quotationLanguage: {
-        title: intl.formatMessage(messages.quotationLanguage),
-        choices: filterDefaultLanguages(),
-        default: defaultLang,
-        noValueOption: false,
-        description: intl.formatMessage(messages.description),
-      },
       image: {
         title: intl.formatMessage(messages.image),
         widget: 'object_browser',
@@ -97,6 +73,13 @@ export const QuoteBlockSchema = ({ intl }) => {
       },
       additional_information: {
         title: intl.formatMessage(messages.additional_information),
+      },
+      quotationLanguage: {
+        title: intl.formatMessage(messages.quotationLanguage),
+        vocabulary: {
+          '@id': 'plone.app.vocabularies.SupportedContentLanguages',
+        },
+        description: intl.formatMessage(messages.description),
       },
       cite: {
         title: intl.formatMessage(messages.cite),
