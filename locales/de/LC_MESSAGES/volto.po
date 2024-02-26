@@ -44,7 +44,7 @@ msgstr "Zitat"
 #: components/schema
 # defaultMessage: This field is not exposed, it is only used by accessibility tools to provide a better experience.
 msgid "This field is not exposed, it is only used by accessibility tools to provide a better experience."
-msgstr "Dieses Fled wird nicht angezeigt, es wird nur von Barrierefreiheittools verwendet, um eine bessere Nutzererfahrung zu gewährleisten."
+msgstr "Dieses Feld wird nicht angezeigt, es wird nur von Barrierefreiheittools verwendet, um eine bessere Nutzererfahrung zu gewährleisten."
 
 #: components/schema
 # defaultMessage: Accessibility
