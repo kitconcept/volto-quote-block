@@ -1,3 +1,0 @@
-- rename blockquote `siteLang` attribute to `locale`
-- remove default languages & use available languages from plone's `SupportedContentLanguages` vocabulary instead [@jonaspiterek]
-- language drop down now show's "English" / "Deutsch" instead of just "en" and "de" (because of the used vocabulary) [@jonaspiterek]

@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0 (2024-03-01)
+
+### Feature
+
+- - rename blockquote `siteLang` attribute to `locale`
+  - remove default languages & use available languages from plone's `SupportedContentLanguages` vocabulary instead [@jonaspiterek]
+  - language drop down now show's "English" / "Deutsch" instead of just "en" and "de" (because of the used vocabulary) [@jonaspiterek] [#16](https://github.com/kitconcept/volto-quote-block/pull/16)
+
+### Bugfix
+
+- - fix hitting return not creating new default block (edit) [@jonaspiterek] [#15](https://github.com/kitconcept/volto-quote-block/pull/15)
+
+### Internal
+
+- - fix typo in german translations [@jonaspiterek] [#18](https://github.com/kitconcept/volto-quote-block/pull/18)
+
 ## 1.0.0-alpha.7 (2024-02-20)
 
 ### Feature
