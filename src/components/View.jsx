@@ -12,7 +12,7 @@ const View = (props) => {
     slateSettings: {
       ...config.settings.slate,
       toolbarButtons: config.settings.slate.toolbarButtons.filter(
-        (index) => index - config.settings.slate.toolbarButtons
+        (index) => index - config.settings.slate.toolbarButtons,
       ),
     },
   };
