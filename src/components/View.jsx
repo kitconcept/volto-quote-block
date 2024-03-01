@@ -35,9 +35,9 @@ const View = (props) => {
             </div>
           )}
         <blockquote
+          className={data.plaintext?.length < 1 && 'isEmpty'}
           cite={data.cite}
-          lang={data.quotationLanguage}
-          locale={intl.locale}
+          lang={data.quotationLanguage || intl.locale}
         >
           {!isEditMode ? (
             <TextBlockView {...props} />

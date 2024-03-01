@@ -3,27 +3,31 @@
 }
 
 .block-editor-quote blockquote > div {
-  margin: 0em 0em 1em;
+  margin-bottom: 1em;
 }
 
-.block.quote blockquote:not(.block-editor-quote blockquote) {
-  &[locale='en'] p {
-    &::before {
-      content: '"';
-    }
+.block.quote blockquote:not(.isEmpty) {
+  &[lang='de'] {
+    p {
+      &::before {
+        content: '„';
+      }
 
-    &::after {
-      content: '"';
+      &::after {
+        content: '“';
+      }
     }
   }
 
-  &[locale='de'] p {
-    &::before {
-      content: '„';
-    }
+  &[lang='en'] {
+    p {
+      &::before {
+        content: '"';
+      }
 
-    &::after {
-      content: '“';
+      &::after {
+        content: '"';
+      }
     }
   }
 }
