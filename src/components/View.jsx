@@ -12,7 +12,7 @@ const View = (props) => {
     slateSettings: {
       ...config.settings.slate,
       toolbarButtons: config.settings.slate.toolbarButtons.filter(
-        (index) => index - config.settings.slate.toolbarButtons,
+        (index) => index - config.settings.slate.toolbarButtons
       ),
     },
   };
@@ -37,7 +37,7 @@ const View = (props) => {
         <blockquote
           className={data.plaintext?.length < 1 && 'isEmpty'}
           cite={data.cite}
-          lang={data.quotationLanguage || intl.locale}
+          lang={data.quotationLanguage != intl.locale && data.quotationLanguage}
         >
           {!isEditMode ? (
             <TextBlockView {...props} />
