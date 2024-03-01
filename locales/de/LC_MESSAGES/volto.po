@@ -27,6 +27,11 @@ msgid "Cite"
 msgstr "Zitiert"
 
 #: components/schema
+# defaultMessage: Enter the URL from where the quote originates here. This field is not exposed, it is only used by accessibility tools to provide a better experience.
+msgid "Enter the URL from where the quote originates here. This field is not exposed, it is only used by accessibility tools to provide a better experience."
+msgstr "Geben Sie hier die URL ein, von der das Zitat stammt. Dieses Feld wird nicht angezeigt, es wird nur von Barrierefreiheittools verwendet, um eine bessere Nutzererfahrung zu gewährleisten."
+
+#: components/schema
 # defaultMessage: Image
 msgid "Image"
 msgstr "Bild"
