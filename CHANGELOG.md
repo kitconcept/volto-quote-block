@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.0 (2024-03-04)
+
+### Breaking
+
+- - fix quotation marks using `lang` attribute from blockquote instead of the html ones [#23](https://github.com/kitconcept/volto-quote-block/pull/23)
+
+### Feature
+
+- - improve understandability of `cite` label [#21](https://github.com/kitconcept/volto-quote-block/pull/21)
+
 ## 1.0.0 (2024-03-01)
 
 ### Feature
