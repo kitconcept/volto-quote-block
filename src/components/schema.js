@@ -22,11 +22,11 @@ const messages = defineMessages({
     id: 'Additional information',
     defaultMessage: 'Additional information',
   },
-  cite: {
-    id: 'Cite',
-    defaultMessage: 'Cite',
+  citeURL: {
+    id: 'citeURL',
+    defaultMessage: 'Cite URL',
   },
-  citeDescription: {
+  citeURLDescription: {
     id: 'Enter the URL from where the quote originates here. This field is not exposed, it is only used by accessibility tools to provide a better experience.',
     defaultMessage:
       'Enter the URL from where the quote originates here. This field is not exposed, it is only used by accessibility tools to provide a better experience.',
@@ -87,9 +87,9 @@ export const QuoteBlockSchema = ({ intl }) => {
         description: intl.formatMessage(messages.description),
       },
       cite: {
-        title: intl.formatMessage(messages.cite),
+        title: intl.formatMessage(messages.citeURL),
         widget: 'url',
-        description: intl.formatMessage(messages.citeDescription),
+        description: intl.formatMessage(messages.citeURLDescription),
       },
     },
     required: [],

@@ -22,11 +22,6 @@ msgid "Author"
 msgstr ""
 
 #: components/schema
-# defaultMessage: Cite
-msgid "Cite"
-msgstr ""
-
-#: components/schema
 # defaultMessage: Enter the URL from where the quote originates here. This field is not exposed, it is only used by accessibility tools to provide a better experience.
 msgid "Enter the URL from where the quote originates here. This field is not exposed, it is only used by accessibility tools to provide a better experience."
 msgstr ""
@@ -54,4 +49,9 @@ msgstr ""
 #: components/schema
 # defaultMessage: Accessibility
 msgid "accessibility"
+msgstr ""
+
+#: components/schema
+# defaultMessage: Cite URL
+msgid "citeURL"
 msgstr ""
