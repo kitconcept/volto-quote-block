@@ -1,26 +1,26 @@
 module.exports = {
-  testMatch: ["**/src/addons/**/?(*.)+(spec|test).[jt]s?(x)"],
+  testMatch: ['**/src/addons/**/?(*.)+(spec|test).[jt]s?(x)'],
   collectCoverageFrom: [
-    "src/addons/**/src/**/*.{js,jsx,ts,tsx}",
-    "!src/**/*.d.ts",
+    'src/addons/**/src/**/*.{js,jsx,ts,tsx}',
+    '!src/**/*.d.ts',
   ],
-  transformIgnorePatterns: ["node_modules/(?!(volto-slate|@plone/volto)/)"],
+  transformIgnorePatterns: ['node_modules/(?!(volto-slate|@plone/volto)/)'],
   moduleNameMapper: {
-    "@plone/volto/cypress": "<rootDir>/node_modules/@plone/volto/cypress",
-    "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
-    "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
-    "@package/(.*)$": "<rootDir>/src/$1",
-    "@root/(.*)$": "<rootDir>/src/$1",
-    "~/(.*)$": "<rootDir>/src/$1",
-    "load-volto-addons":
-      "<rootDir>/node_modules/@plone/volto/jest-addons-loader.js",
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    '@plone/volto/cypress': '<rootDir>/node_modules/@plone/volto/cypress',
+    '@plone/volto/babel': '<rootDir>/node_modules/@plone/volto/babel',
+    '@plone/volto/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
+    '@package/(.*)$': '<rootDir>/src/$1',
+    '@root/(.*)$': '<rootDir>/src/$1',
+    '~/(.*)$': '<rootDir>/src/$1',
+    'load-volto-addons':
+      '<rootDir>/node_modules/@plone/volto/jest-addons-loader.js',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   transform: {
-    "^.+\\.js(x)?$": "babel-jest",
-    "^.+\\.(png)$": "jest-file",
-    "^.+\\.(jpg)$": "jest-file",
-    "^.+\\.(svg)$": "./node_modules/@plone/volto/jest-svgsystem-transform.js",
+    '^.+\\.js(x)?$': 'babel-jest',
+    '^.+\\.(png)$': 'jest-file',
+    '^.+\\.(jpg)$': 'jest-file',
+    '^.+\\.(svg)$': './node_modules/@plone/volto/jest-svgsystem-transform.js',
   },
   coverageThreshold: {
     global: {
