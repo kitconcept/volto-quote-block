@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.1 (2024-03-05)
+
+### Bugfix
+
+- Change locales literal to Zitat-URL @sneridagh [#25](https://github.com/kitconcept/volto-quote-block/pull/25)
+
 ## 1.1.0 (2024-03-04)
 
 ### Breaking
