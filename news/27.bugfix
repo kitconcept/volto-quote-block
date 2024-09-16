@@ -1,0 +1,2 @@
+Fix Uncaught TypeError on view: "`intl` is undefined".
+@mauritsvanrees
