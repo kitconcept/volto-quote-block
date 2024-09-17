@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.2 (2024-09-17)
+
+### Bugfix
+
+- Fix Uncaught TypeError on view: "`intl` is undefined".
+  @mauritsvanrees [#27](https://github.com/kitconcept/volto-quote-block/pull/27)
+
 ## 1.1.1 (2024-03-05)
 
 ### Bugfix
