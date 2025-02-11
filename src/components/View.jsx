@@ -28,7 +28,8 @@ const View = (props) => {
               <img
                 src={`${flattenToAppURL(data.image?.[0]?.['@id'])}/${
                   data.image?.[0]?.image_scales?.image[0]?.scales?.preview
-                    ?.download
+                    ?.download ||
+                  data.image?.[0]?.image_scales?.image[0]?.download
                 }}`}
                 alt={data.image?.[0]?.title}
                 className="image"
