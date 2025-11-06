@@ -42,7 +42,9 @@ const messages = defineMessages({
   },
 });
 
-export const QuoteBlockSchema = ({ intl }) => {
+export const QuoteBlockSchema = (props) => {
+  const { intl } = props;
+
   return {
     title: intl.formatMessage(messages.quote),
     block: 'quote',
