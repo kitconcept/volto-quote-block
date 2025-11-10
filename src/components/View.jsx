@@ -1,13 +1,13 @@
 import React from 'react';
 import config from '@plone/volto/registry';
-import { useSelector } from 'react-redux';
+import { useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const View = (props) => {
   const { data, isEditMode } = props;
-  const intl = useSelector((state) => state.intl);
+  const intl = useIntl();
 
   const customSlateSettings = {
     ...props,

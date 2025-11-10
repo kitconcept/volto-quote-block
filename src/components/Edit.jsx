@@ -3,6 +3,7 @@ import React from 'react';
 import { SidebarPortal } from '@plone/volto/components';
 import View from './View';
 import config from '@plone/volto/registry';
+import { useIntl } from 'react-intl';
 
 const Edit = (props) => {
   const {
@@ -15,6 +16,7 @@ const Edit = (props) => {
     onAddBlock,
     disableEnter = false,
   } = props;
+  const intl = useIntl();
 
   const handleEnterKey = (e, index) => {
     const isMultipleSelection = e.shiftKey;
@@ -38,6 +40,7 @@ const Edit = (props) => {
       <SidebarPortal selected={selected}>
         <QuoteBlockSidebar
           {...props}
+          intl={intl}
           data={data}
           block={block}
           onChangeBlock={onChangeBlock}
