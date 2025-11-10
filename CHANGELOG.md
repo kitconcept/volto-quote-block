@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.3 (2025-11-10)
+
+### Internal
+
+- Remove @plone/volto as peerDep. @sneridagh 
+
 ## 1.1.2 (2024-09-17)
 
 ### Bugfix

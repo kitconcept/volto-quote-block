@@ -1858,8 +1858,6 @@ __metadata:
     stylelint-config-idiomatic-order: 9.0.0
     stylelint-config-sass-guidelines: 10.0.0
     stylelint-prettier: 4.0.2
-  peerDependencies:
-    "@plone/volto": ^17.0.0
   languageName: unknown
   linkType: soft
 
