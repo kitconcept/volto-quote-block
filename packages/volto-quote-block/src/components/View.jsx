@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { DetachedTextBlockEditor } from '@plone/volto-slate/blocks/Text/DetachedTextBlockEditor';
+import Image from '@plone/volto/components/theme/Image/Image';
+
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import config from '@plone/volto/registry';
 
@@ -25,14 +27,13 @@ const View = (props) => {
         {config.blocks?.blocksConfig?.quote?.showImageField &&
           data.image?.[0] && (
             <div className="image-wrapper">
-              <img
+              <Image
                 src={`${flattenToAppURL(data.image?.[0]?.['@id'])}/${
                   data.image?.[0]?.image_scales?.image[0]?.scales?.preview
                     ?.download
                 }}`}
                 alt={data.image?.[0]?.title}
                 className="image"
-                loading="lazy"
               />
             </div>
           )}
