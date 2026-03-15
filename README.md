@@ -233,6 +233,8 @@ make acceptance-test
 
 The project is licensed under the MIT license.
 
-## Credits and acknowledgements 🙏
+## Credits
 
-Generated using [Cookieplone (0.9.10)](https://github.com/plone/cookieplone) and [cookieplone-templates (697694b)](https://github.com/plone/cookieplone-templates/commit/697694b9b3ac17bb93ad2e4d8321b3f1788f3f1b) on 2025-11-10 19:16:26.748175. A special thanks to all contributors and supporters!
+<img alt="Deutsches Zentrum für Luft- und Raumfahrt" src="https://github.com/kitconcept/volto-slider-block/raw/main/dlr.svg" width="230px" />
+
+The development of this plugin has been kindly sponsored by the [German Aerospace Center (DLR)](https://dlr.de).
